@@ -1,5 +1,5 @@
 import './App.css';
-import Carousel from './components/Pages/Home/Carousel/Carousel';
+import Home from './components/Pages/Home/Home';
 import Header from './components/Pages/Shared/Header/Header';
 
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="">
       <Header></Header>
-      <Carousel></Carousel>
+      <Home></Home>
     </div>
   );
 }
