@@ -3,6 +3,15 @@ import { useState, useRef, useEffect } from 'react';
 import data from '../../../../carouselData.json'
 
 const Carousel = () => {
+
+    // const [carouselDatas, setCarouselDatas] = useState([])
+
+    // useEffect(() => {
+    //     fetch("carouselData.json")
+    //         .then(res => res.json())
+    //         .then(data => setCarouselDatas(data))
+    // }, [])
+    // console.log(carouselDatas);
     const maxScrollWidth = useRef(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const carousel = useRef(null);
