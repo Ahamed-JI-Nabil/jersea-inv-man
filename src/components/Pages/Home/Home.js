@@ -24,6 +24,7 @@ const Home = () => {
             <div className='grid grid-cols-3 m-6 p-4 px-16'>
                 {
                     invItems.slice(0, 6).map(invItem => <SingleInvItem
+                        key={invItem._id}
                         invItem={invItem}
                     ></SingleInvItem>)
                 }
