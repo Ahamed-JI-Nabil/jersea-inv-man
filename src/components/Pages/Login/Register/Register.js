@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Link, useMatch } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { Link, useLocation, useMatch, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -23,13 +23,26 @@ const Register = () => {
 
     const handleSubmitRegister = event => {
         event.preventDefault()
-        const name = nameRef.current.value;
+        // const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passRef.current.value;
 
         createUserWithEmailAndPassword(email, password)
     };
+    const navigate = useNavigate()
 
+
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    if (error) {
+        alert('Could not create your account at this time! Please Try Again Later!')
+    }
     if (loading) {
         return <Loading></Loading>
     }

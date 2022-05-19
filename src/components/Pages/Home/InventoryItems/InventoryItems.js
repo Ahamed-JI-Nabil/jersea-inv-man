@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useInvItems from '../../../../hooks/useInvItems';
 import StripedSpacer from '../../../../images/StripedSpacer.webp'
 import SingleInvItem from './SingleInvItem/SingleInvItem';
 
 const InventoryItems = () => {
 
-    const [invItems, serInvItems] = useState([])
+    const [invItems, serInvItems] = useInvItems([])
 
-    useEffect(() => {
-        fetch('InventoryItemsDatas.json')
-            .then(res => res.json())
-            .then(data => serInvItems(data))
-    }, [])
 
     return (
         <div>
@@ -23,6 +19,7 @@ const InventoryItems = () => {
             <div className='grid grid-cols-3 m-6 p-4 px-16'>
                 {
                     invItems.map(invItem => <SingleInvItem
+                        key={invItem._id}
                         invItem={invItem}
                     ></SingleInvItem>)
                 }

@@ -7,9 +7,15 @@ import Register from './components/Pages/Login/Register/Register';
 import Inventory from './components/Pages/Inventory/Inventory';
 import CheckOut from './components/Pages/CheckOut/CheckOut';
 import RequireAuth from './components/Pages/Login/RequreAuth/RequreAuth';
+import AddItems from './components/Pages/AddItems/AddItems';
+import auth from './firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import ManageItems from './components/Pages/ManageItems/ManageItems';
+import UpdateItem from './components/Pages/UpdateItem/UpdateItem';
 
 
 function App() {
+  const [user,] = useAuthState(auth);
   return (
     <div className="">
       <Header></Header>
@@ -26,6 +32,16 @@ function App() {
         <Route path='/checkout' element={
           <RequireAuth>
             <CheckOut></CheckOut>
+          </RequireAuth>
+        }></Route>
+        <Route path='/additems' element={
+          <RequireAuth>
+            {user ? <AddItems></AddItems> : ''}
+          </RequireAuth>
+        }></Route>
+        <Route path='/updateitem/:id' element={
+          <RequireAuth>
+            <UpdateItem></UpdateItem>
           </RequireAuth>
         }></Route>
       </Routes>

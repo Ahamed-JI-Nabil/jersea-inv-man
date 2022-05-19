@@ -37,6 +37,9 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+    if (error) {
+        alert('Account Login Failed! Please Try Again!')
+    }
     if (loading) {
         return <Loading></Loading>
     }

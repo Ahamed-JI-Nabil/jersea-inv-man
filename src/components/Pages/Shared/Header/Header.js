@@ -36,7 +36,11 @@ const Header = () => {
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/checkout'>Check Out</Link>
                                         {user ?
-                                            <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" onClick={handleSignOut} to='/login'>SignOut</Link>
+                                            <>
+                                                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/additems'>Add Items</Link>
+                                                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" onClick={handleSignOut} to='/login'>Logout</Link>
+
+                                            </>
                                             :
                                             <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/login'>Login</Link>
                                         }
