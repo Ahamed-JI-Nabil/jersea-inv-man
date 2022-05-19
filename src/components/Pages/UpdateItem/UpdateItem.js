@@ -16,6 +16,8 @@ const UpdateItem = () => {
 
     const { _id, jerseyName, price, supplierName, quantity, imgUrl } = invItems
     const quantityRef = useRef()
+
+
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
@@ -34,27 +36,30 @@ const UpdateItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert("Item added Successfully")
                 event.target.reset()
             })
     }
 
-    const handleDeliveredItem = id => {
-        const proceed = window.confirm('Are you sure you want to delete this item?')
-        if (proceed) {
-            fetch(url, {
-                method: 'DELETE'
+    const handleDeliveredItem = event => {
+        event.preventDefault()
+
+        const updateQuantity = parseInt(+invItems.quantity) - 1
+
+        const updatedQuantity = { _id, jerseyName, price, supplierName, quantity: updateQuantity, imgUrl }
+        setInvItems(updatedQuantity)
+
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedQuantity),
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert("Item added Successfully")
+                event.target.reset()
             })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCoung > 0) {
-                        const updateQuantity = parseInt(invItems.quantity) - 1
-                        console.log(updateQuantity);
-                        const remaining = invItems.filter(item => item._id !== id)
-                        setInvItems(remaining)
-                    }
-                })
-        }
     }
 
     return (
@@ -80,7 +85,7 @@ const UpdateItem = () => {
                                 <h6 className='font-semibold'>Price: {invItems.price}</h6>
                                 <h6 className='font-semibold mb-4'>Quantity: {quantity}</h6>
                             </div>
-                            <form>
+                            <form onSubmit={handleUpdateQuantity}>
                                 <input
                                     name="quantity"
                                     type="number"
@@ -91,11 +96,13 @@ const UpdateItem = () => {
                                         "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                     }
                                 />
+                                <div className='flex justify-center'>
+                                    <button className='bg-gray-900 text-gray-50 px-8 py-1 rounded-lg mt-4 mb-4'>Update Quantity</button>
+                                </div>
                             </form>
 
-                            <div className='flex justify-evenly'>
-                                <button onClick={handleDeliveredItem} className='bg-gray-900 text-gray-50 px-6 py-1 rounded-lg mt-4'>Delivered</button>
-                                <button onClick={handleUpdateQuantity} className='bg-gray-900 text-gray-50 px-6 py-1 rounded-lg mt-4'>Update</button>
+                            <div className='flex justify-center'>
+                                <button onClick={handleDeliveredItem} className='bg-gray-900 text-gray-50 px-14 py-1 rounded-lg mt-4'>Delivered</button>
                             </div>
                         </div>
 
