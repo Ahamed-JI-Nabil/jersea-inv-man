@@ -34,7 +34,6 @@ const Header = () => {
                                     <div className="ml-10 flex items-baseline space-x-4">
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
-                                        <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/checkout'>Check Out</Link>
                                         {user ?
                                             <>
                                                 <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/additems'>Add Items</Link>

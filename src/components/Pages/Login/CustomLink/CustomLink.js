@@ -9,7 +9,7 @@ const CustomLink = ({ children, to, ...props }) => {
     return (
         <div>
             <Link
-                style={{ color: match ? "text-rose-600" : "none" }}
+                style={{ borderBottom: match ? "2px solid gray" : "none" }}
                 to={to}
                 {...props}
             >

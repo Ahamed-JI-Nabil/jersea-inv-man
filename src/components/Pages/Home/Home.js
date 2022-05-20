@@ -1,10 +1,10 @@
 import React from 'react';
 import useInvItems from '../../../hooks/useInvItems';
-import Footer from '../Shared/Footer/Footer';
+import BgImg from '../Shared/BgImg/BgImg';
 import Carousel from './Carousel/Carousel';
 import Clubs from './Clubs/Clubs';
-import StripedSpacer from '../../../images/StripedSpacer.webp'
 import SingleInvItem from './InventoryItems/SingleInvItem/SingleInvItem';
+import TrandingAccessories from './TrandingAccessories/TrandingAccessories';
 
 
 
@@ -15,12 +15,7 @@ const Home = () => {
     return (
         <div className=''>
             <Carousel></Carousel>
-            <div className='relative'>
-                <img className='w-full' src={StripedSpacer} alt="" />
-                <div className=' absolute top-2 left-1/3 '>
-                    <h2 className='text-3xl font-bold ml-20 italic bg-slate-50 px-6 py-2'>Inventory Items</h2>
-                </div>
-            </div>
+            <BgImg></BgImg>
             <div className='grid grid-cols-3 '>
                 {
                     invItems.slice(0, 6).map(invItem => <SingleInvItem
@@ -29,9 +24,10 @@ const Home = () => {
                     ></SingleInvItem>)
                 }
             </div>
+            <TrandingAccessories></TrandingAccessories>
             <Clubs></Clubs>
 
-            <Footer></Footer>
+
         </div>
     );
 };

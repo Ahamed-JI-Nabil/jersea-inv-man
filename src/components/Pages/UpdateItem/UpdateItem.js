@@ -57,15 +57,15 @@ const UpdateItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert("Item added Successfully")
+                alert("1 Item Delivered!!!")
                 event.target.reset()
             })
     }
 
     return (
         <div>
-            <figure className="h-screen flex bg-gray-100">
-                <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-1">
+            <figure className="flex bg-gray-100">
+                <div className="w-full max-w-md m-auto bg-white rounded-lg  my-10 border border-primaryBorder shadow-default py-10 px-1">
 
                     <div className="text-primary m-6">
                         <div className='text-center mb-3'>

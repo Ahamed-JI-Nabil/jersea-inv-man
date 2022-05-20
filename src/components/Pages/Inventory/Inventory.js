@@ -3,8 +3,7 @@ import InventoryItems from '../Home/InventoryItems/InventoryItems';
 
 const Inventory = () => {
     return (
-        <div>
-            <h1> This is inventory section!!!</h1>
+        <div className='mt-10'>
             <InventoryItems></InventoryItems>
         </div>
     );

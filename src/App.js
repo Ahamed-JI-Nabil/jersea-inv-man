@@ -8,6 +8,7 @@ import Inventory from './components/Pages/Inventory/Inventory';
 import CheckOut from './components/Pages/CheckOut/CheckOut';
 import RequireAuth from './components/Pages/Login/RequreAuth/RequreAuth';
 import AddItems from './components/Pages/AddItems/AddItems';
+import Footer from '../src/components/Pages/Shared/Footer/Footer';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import UpdateItem from './components/Pages/UpdateItem/UpdateItem';
@@ -50,7 +51,7 @@ function App() {
           </RequireAuth>
         }></Route>
       </Routes>
-
+      <Footer></Footer>
     </div>
   );
 }
