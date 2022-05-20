@@ -10,8 +10,8 @@ import RequireAuth from './components/Pages/Login/RequreAuth/RequreAuth';
 import AddItems from './components/Pages/AddItems/AddItems';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import ManageItems from './components/Pages/ManageItems/ManageItems';
 import UpdateItem from './components/Pages/UpdateItem/UpdateItem';
+import ManageItems from './components/Pages/ManageItems/ManageItems';
 
 
 function App() {
@@ -42,6 +42,11 @@ function App() {
         <Route path='/updateitem/:id' element={
           <RequireAuth>
             <UpdateItem></UpdateItem>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manageitems' element={
+          <RequireAuth>
+            <ManageItems></ManageItems>
           </RequireAuth>
         }></Route>
       </Routes>

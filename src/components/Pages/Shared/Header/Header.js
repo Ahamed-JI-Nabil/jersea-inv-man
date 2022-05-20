@@ -38,6 +38,7 @@ const Header = () => {
                                         {user ?
                                             <>
                                                 <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/additems'>Add Items</Link>
+                                                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/manageitems'>Manage Items</Link>
                                                 <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" onClick={handleSignOut} to='/login'>Logout</Link>
 
                                             </>

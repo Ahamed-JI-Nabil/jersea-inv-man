@@ -1,26 +1,46 @@
 import React from 'react';
+import useInvItems from '../../../hooks/useInvItems';
+import ItemsTable from './ItemsTable/ItemsTable';
 
 const ManageItems = () => {
-    // const handleDeliveredItem = id => {
-    //     const proceed = window.confirm('Are you sure you want to delete this item?')
-    //     if (proceed) {
-    //         fetch(url, {
-    //             method: 'DELETE'
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 if (data.deletedCoung > 0) {
-    //                     const updateQuantity = parseInt(invItems.quantity) - 1
-    //                     console.log(updateQuantity);
-    //                     const remaining = invItems.filter(item => item._id !== id)
-    //                     setInvItems(remaining)
-    //                 }
-    //             })
-    //     }
-    // }
+
+    const [invItems] = useInvItems([])
+
+
     return (
-        <div>
-            <h2>This is Manage Items section!!!</h2>
+        <div className="relative overflow-x-auto shadow-md">
+            <table className="w-full text-sm text-left ">
+                <thead className="text-xs  uppercase  dar ">
+                    <tr>
+                        <th scope="col" className="px-6 py-3">
+                            Product Image
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Product Name
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Quantity
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Supplier Name
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Price
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            <span className="sr-only">Edit</span>
+                        </th>
+                    </tr>
+                </thead>
+
+            </table>
+            {
+                invItems.map(invItem => <ItemsTable
+                    key={invItem._id}
+                    invItem={invItem}
+                ></ItemsTable>)
+
+            }
         </div>
     );
 };
