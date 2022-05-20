@@ -13,6 +13,7 @@ import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import UpdateItem from './components/Pages/UpdateItem/UpdateItem';
 import ManageItems from './components/Pages/ManageItems/ManageItems';
+import NotFound from './components/Pages/Shared/NotFound/NotFound';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             <ManageItems></ManageItems>
           </RequireAuth>
         }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
