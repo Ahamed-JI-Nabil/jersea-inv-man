@@ -15,7 +15,7 @@ const AddItems = () => {
         // console.log(jerseyName, price, supplierName, quantity, imgUrl);
 
 
-        fetch('http://localhost:5000/items', {
+        fetch('https://aqueous-forest-31171.herokuapp.com/items', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

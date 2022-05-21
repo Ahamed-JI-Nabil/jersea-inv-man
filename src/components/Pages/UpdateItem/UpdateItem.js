@@ -7,7 +7,7 @@ const UpdateItem = () => {
 
     const [invItems, setInvItems] = useState([])
 
-    const url = `http://localhost:5000/items/${id}`
+    const url = `https://aqueous-forest-31171.herokuapp.com/items/${id}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

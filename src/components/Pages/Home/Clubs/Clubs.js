@@ -6,7 +6,7 @@ const Clubs = () => {
     const [clubs, setClubs] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/clubs")
+        fetch("https://aqueous-forest-31171.herokuapp.com/clubs")
             .then(res => res.json())
             .then(data => setClubs(data))
     }, [])

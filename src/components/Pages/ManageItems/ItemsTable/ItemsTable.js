@@ -10,7 +10,7 @@ const ItemsTable = ({ invItem }) => {
     const handleDeleteItem = id => {
         const proceed = window.confirm('Are you sure you want to delete this item?')
         if (proceed) {
-            fetch(`http://localhost:5000/items/${id}`, {
+            fetch(`https://aqueous-forest-31171.herokuapp.com/items/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

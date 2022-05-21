@@ -5,7 +5,7 @@ const useInvItems = () => {
     const [invItems, setInvItems] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://aqueous-forest-31171.herokuapp.com/items')
             .then(res => res.json())
             .then(data => setInvItems(data))
     }, [])

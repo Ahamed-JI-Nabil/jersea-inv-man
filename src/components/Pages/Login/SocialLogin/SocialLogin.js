@@ -22,7 +22,7 @@ const SocialLogin = () => {
         return <Loading></Loading>
     }
     if (error) {
-        alert('Somthing went Horribly Wrong! Could Not create an Account. Please Try Again')
+        alert('Something went Horribly Wrong! Could Not create an Account. Please Try Again')
     }
 
 

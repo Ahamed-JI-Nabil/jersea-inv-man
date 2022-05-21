@@ -5,7 +5,6 @@ import Login from '../src/components/Pages/Login/Login/Login'
 import Header from './components/Pages/Shared/Header/Header';
 import Register from './components/Pages/Login/Register/Register';
 import Inventory from './components/Pages/Inventory/Inventory';
-import CheckOut from './components/Pages/CheckOut/CheckOut';
 import RequireAuth from './components/Pages/Login/RequreAuth/RequreAuth';
 import AddItems from './components/Pages/AddItems/AddItems';
 import Footer from '../src/components/Pages/Shared/Footer/Footer';
@@ -14,6 +13,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import UpdateItem from './components/Pages/UpdateItem/UpdateItem';
 import ManageItems from './components/Pages/ManageItems/ManageItems';
 import NotFound from './components/Pages/Shared/NotFound/NotFound';
+import Blogs from './components/Pages/Blogs/Blogs';
 
 
 function App() {
@@ -26,14 +26,10 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/inventory' element={
           <RequireAuth>
             <Inventory></Inventory>
-          </RequireAuth>
-        }></Route>
-        <Route path='/checkout' element={
-          <RequireAuth>
-            <CheckOut></CheckOut>
           </RequireAuth>
         }></Route>
         <Route path='/additems' element={
