@@ -16,11 +16,11 @@ const SingleInvItem = ({ invItem }) => {
                 <p className='font-thin'>Supplier Name: {supplierName}</p>
             </div>
             <div className='flex justify-between'>
-                <h6 className='font-semibold'>Price: {price}</h6>
+                <h6 className='font-semibold'>Price:$ {price}</h6>
                 <h6 className='font-semibold'>Quantity: {quantity}</h6>
             </div>
             <div className='flex justify-center'>
-                <Link to={`/updateitem/${_id}`}><button className='bg-gray-900 text-gray-50 px-6 py-1 rounded-lg mt-4 '>Update</button></Link>
+                <Link to={`/updateitem/${_id}`}><button className='hover:bg-rose-700 bg-gray-900 text-gray-50 px-14 py-1 rounded-lg mt-8'>Update</button></Link>
             </div>
 
         </div>

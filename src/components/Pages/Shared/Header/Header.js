@@ -10,7 +10,7 @@ import { signOut } from "firebase/auth";
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const [user,] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const handleSignOut = () => {
         signOut(auth)
@@ -32,24 +32,35 @@ const Header = () => {
     return (
         <div>
             <div>
-                <nav className="bg-slate-900 px-18">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex items-center justify-between h-20 px-12">
-                            <div className="flex items-center justify-end lg:justify-between">
-                                <div className="flex-shrink-0">
-                                    <Link to='/'><img
-                                        className="w-20"
-                                        src={mainLogo}
-                                        alt="Jersea"
-                                    /></Link>
-                                </div>
-                                <div className="hidden md:block">
-                                    <div className="ml-10 flex items-baseline space-x-4">
-                                        <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
-                                        <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
-                                        <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/blogs'>Blogs</Link>
-                                        {menuItems}
+                <nav className="bg-slate-900">
+                    <div className="max-w-7xl mx-auto px-8">
+                        <div className="lg:flex flex items-center justify-between lg:justify-evenly h-20 ">
+                            <div className="navbar lg:flex lg:flex-wrap lg:justify-around">
+                                <div className="sm:navbar-start">
+                                    <div className="dropdown">
+
+                                        <ul id='navbar' tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
+                                            <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
+                                            <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
+                                            <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/blogs'>Blogs</Link>
+                                            {menuItems}
+                                        </ul>
                                     </div>
+                                    <div className="flex-shrink-0">
+                                        <Link to='/'><img
+                                            className="w-20"
+                                            src={mainLogo}
+                                            alt="Jersea"
+                                        /></Link>
+                                    </div>
+                                </div>
+                                <div className="navbar-center hidden lg:flex">
+                                    <ul className="menu menu-horizontal p-0">
+                                        <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
+                                        <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
+                                        {menuItems}
+                                    </ul>
+
                                 </div>
                             </div>
                             <div className="-mr-2 flex md:hidden">
@@ -110,7 +121,7 @@ const Header = () => {
                     >
                         {(ref) => (
                             <div className="md:hidden" id="mobile-menu">
-                                <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                                <div ref={ref} className="px-6 pt-2 pb-3 space-y-1 sm:px-3">
                                     <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
                                     <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
                                     {menuItems}

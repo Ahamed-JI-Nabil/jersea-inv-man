@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const UpdateItem = () => {
@@ -12,7 +14,7 @@ const UpdateItem = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setInvItems(data))
-    }, [])
+    }, [url])
 
     const { _id, jerseyName, price, supplierName, quantity, imgUrl } = invItems
     const quantityRef = useRef()
@@ -36,6 +38,7 @@ const UpdateItem = () => {
         })
             .then(res => res.json())
             .then(data => {
+                toast('Items Added Successfully!')
                 event.target.reset()
             })
     }
@@ -57,7 +60,7 @@ const UpdateItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert("1 Item Delivered!!!")
+                toast('1 Item Delivered.')
                 event.target.reset()
             })
     }

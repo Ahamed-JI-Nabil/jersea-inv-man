@@ -11,7 +11,7 @@ const TeandingItem = ({ accessorie }) => {
                 <h2 className='ml-6 text-center mt-4'>{productName}</h2>
                 <p className='text-center'>${price}</p>
                 <div className='flex justify-center mt-4'>
-                    <button className='bg-gray-900 text-gray-50 px-14 py-1 rounded-lg '>Buy Now</button>
+                    <button className='hover:bg-rose-700 bg-gray-900 text-gray-50 px-14 py-1 rounded-lg '>Buy Now</button>
                 </div>
             </div>
         </div>

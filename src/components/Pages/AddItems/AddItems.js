@@ -1,6 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddItems = () => {
+
+    const navigate = useNavigate()
 
     const handleAddItems = event => {
         event.preventDefault()
@@ -24,7 +28,8 @@ const AddItems = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert("Item added Successfully")
+                toast("Item added Successfully")
+                navigate('/inventory')
                 event.target.reset()
             })
 
