@@ -67,11 +67,11 @@ const UpdateItem = () => {
             <figure className="flex bg-gray-100">
                 <div className="w-full max-w-md m-auto bg-white rounded-lg  my-10 border border-primaryBorder shadow-default py-10 px-1">
 
-                    <div className="text-primary m-6">
+                    <div className=" m-6">
                         <div className='text-center mb-3'>
                         </div>
                         <div className="flex items-center mt-3 justify-center">
-                            <h1 className="text-2xl font-medium text-primary mt-2 mb-6">
+                            <h1 className="text-2xl font-medium  mt-2 mb-6">
                                 Update Item
                             </h1>
                         </div>
@@ -93,7 +93,7 @@ const UpdateItem = () => {
                                     placeholder="Quantity"
                                     required
                                     className={
-                                        "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                        "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                     }
                                 />
                                 <div className='flex justify-center'>

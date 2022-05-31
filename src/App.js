@@ -14,6 +14,7 @@ import UpdateItem from './components/Pages/UpdateItem/UpdateItem';
 import ManageItems from './components/Pages/ManageItems/ManageItems';
 import NotFound from './components/Pages/Shared/NotFound/NotFound';
 import Blogs from './components/Pages/Blogs/Blogs';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

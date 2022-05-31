@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import mainLogo from '../../../../images/icons/Main LOGO SVG.svg'
+import mainLogo from '../../../../images/Main LOGO ONG.png'
 import { Link } from "react-router-dom";
 import CustomLink from "../../Login/CustomLink/CustomLink";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -16,16 +16,29 @@ const Header = () => {
         signOut(auth)
     }
 
+    const menuItems = <>
+        {user ?
+            <>
+                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/additems'>Add Items</Link>
+                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/manageitems'>Manage Items</Link>
+                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" onClick={handleSignOut} to='/login'>Logout</Link>
+
+            </>
+            :
+            <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/login'>Login</Link>
+        }
+    </>
+
     return (
         <div>
             <div>
-                <nav className="bg-slate-900">
+                <nav className="bg-slate-900 px-18">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex items-center justify-between h-16">
-                            <div className="flex items-center">
+                        <div className="flex items-center justify-between h-20 px-12">
+                            <div className="flex items-center justify-end lg:justify-between">
                                 <div className="flex-shrink-0">
                                     <Link to='/'><img
-                                        className="h-16 w-16"
+                                        className="w-20"
                                         src={mainLogo}
                                         alt="Jersea"
                                     /></Link>
@@ -35,16 +48,7 @@ const Header = () => {
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
                                         <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/blogs'>Blogs</Link>
-                                        {user ?
-                                            <>
-                                                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/additems'>Add Items</Link>
-                                                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/manageitems'>Manage Items</Link>
-                                                <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" onClick={handleSignOut} to='/login'>Logout</Link>
-
-                                            </>
-                                            :
-                                            <Link as={CustomLink} className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/login'>Login</Link>
-                                        }
+                                        {menuItems}
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +113,7 @@ const Header = () => {
                                 <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                                     <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/home'>Home</Link>
                                     <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/inventory'>Inventory</Link>
-                                    <Link className="text-gray-300 hover:text-rose-600  px-3 py-2 text-sm font-medium" to='/login'>Login</Link>
+                                    {menuItems}
                                 </div>
                             </div>
                         )}

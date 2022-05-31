@@ -1,10 +1,10 @@
 import React from 'react';
 import useInvItems from '../../../hooks/useInvItems';
-import BgImg from '../Shared/BgImg/BgImg';
 import Carousel from './Carousel/Carousel';
 import Clubs from './Clubs/Clubs';
 import SingleInvItem from './InventoryItems/SingleInvItem/SingleInvItem';
 import TrandingAccessories from './TrandingAccessories/TrandingAccessories';
+import inventoryimage from '../../../images/inventory item image.jpg'
 
 
 
@@ -15,10 +15,10 @@ const Home = () => {
     return (
         <div className=''>
             <Carousel></Carousel>
-            <BgImg></BgImg>
-            <div className='grid grid-cols-3 '>
+            <img src={inventoryimage} alt="" />
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 m-6 p-4 px-16'>
                 {
-                    invItems.slice(0, 6).map(invItem => <SingleInvItem
+                    invItems.slice(0, 8).map(invItem => <SingleInvItem
                         key={invItem._id}
                         invItem={invItem}
                     ></SingleInvItem>)

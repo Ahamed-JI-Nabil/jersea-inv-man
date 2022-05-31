@@ -15,7 +15,7 @@ const TrandingAccessories = () => {
     return (
         <div className='my-14'>
             <img src={accessoriesHeader} alt="" />
-            <div className='grid grid-cols-4 gap-2 px-16 mb-20'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 m-6 p-4 px-16'>
                 {
                     accessories.map(accessorie => <TeandingItem
                         key={accessorie._id}

@@ -14,7 +14,7 @@ const Clubs = () => {
     return (
         <div className=''>
             <img src={populerClubs} alt="" />
-            <div className='grid grid-cols-6 gap-0 px-16 mb-40'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 m-6 p-4 px-16 justify-items-center'>
                 {
                     clubs.map(club => <Club
                         key={club._id}

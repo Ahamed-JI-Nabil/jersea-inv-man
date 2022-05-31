@@ -35,11 +35,11 @@ const AddItems = () => {
             <figure className="h-screen flex bg-gray-100">
                 <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-1">
 
-                    <div className="text-primary m-6">
+                    <div className=" m-6">
                         <div className='text-center mb-3'>
                         </div>
                         <div className="flex items-center mt-3 justify-center">
-                            <h1 className="text-2xl font-medium text-primary mt-2 mb-6">
+                            <h1 className="text-2xl font-medium  mt-2 mb-6">
                                 Add Items To Inventory!
                             </h1>
                         </div>
@@ -51,7 +51,7 @@ const AddItems = () => {
                                     placeholder="Jersey Name"
                                     required
                                     className={
-                                        "w-full p-2 text-primary border rounded-md outline-none text-base transition duration-150 ease-in-out mb-4"
+                                        "w-full p-2  border rounded-md outline-none text-base transition duration-150 ease-in-out mb-4"
                                     }
                                 />
                                 <input
@@ -60,7 +60,7 @@ const AddItems = () => {
                                     placeholder="Price"
                                     required
                                     className={
-                                        "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                        "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                     }
                                 />
                             </div>
@@ -70,7 +70,7 @@ const AddItems = () => {
                                 placeholder="Supplier Name"
                                 required
                                 className={
-                                    "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                    "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                 }
                             />
                             <input
@@ -79,7 +79,7 @@ const AddItems = () => {
                                 placeholder="Quantity"
                                 required
                                 className={
-                                    "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                    "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                 }
                             />
                             <input
@@ -88,7 +88,7 @@ const AddItems = () => {
                                 placeholder="Image Link"
                                 required
                                 className={
-                                    "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                    "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                 }
                             />
                             <div className="flex items-center mt-3 justify-center">

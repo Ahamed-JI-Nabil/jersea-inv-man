@@ -51,13 +51,13 @@ const Login = () => {
             <figure className="h-screen flex bg-gray-100">
                 <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-1">
 
-                    <div className="text-primary m-6">
+                    <div className=" m-6">
                         <div className='text-center mb-3'>
                             <Link className={match ? 'bg-gray-900 text-gray-50 px-8 py-2 rounded-md mr-3' : ''} to='/login'>LOGIN</Link>
                             <Link className={match ? '' : ' text-gray-50'} to='/register'>REGISTER</Link>
                         </div>
                         <div className="flex items-center mt-3 justify-center">
-                            <h1 className="text-2xl font-medium text-primary mt-2 mb-6">
+                            <h1 className="text-2xl font-medium  mt-2 mb-6">
                                 Login to your account
                             </h1>
                         </div>
@@ -69,7 +69,7 @@ const Login = () => {
                                 ref={emailRef}
                                 placeholder="Email"
                                 className={
-                                    "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                    "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                 }
                             />
                             <label>Password:</label>
@@ -79,7 +79,7 @@ const Login = () => {
                                 ref={passRef}
                                 placeholder="Password"
                                 className={
-                                    "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
+                                    "w-full p-2  border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
                                 }
                             />
                             <div className="flex items-center mt-3 justify-center">
